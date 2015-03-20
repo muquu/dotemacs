@@ -56,6 +56,27 @@
 
     ;; auto-complete
     auto-complete
+
+    ;; yasnippets
+    yasnippet
+
+    ;; flycheck
+    flycheck
+
+    ;; GNU GLOBAL
+    ggtags
+    helm-gtags
+    
+    ;; PHP
+    php-mode
+    php-completion
+    phpunit
+    php-eldoc
+    php-auto-yasnippets
+    
+    ;; python
+    python-environment
+    jedi
     
     ))
 

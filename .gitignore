@@ -16,6 +16,8 @@ places
 history
 tramp
 kkcrc
+.python-environments
+ac-comphist.dat
 
 elpa/
 site-lisp/
