@@ -63,6 +63,11 @@
     ;; flycheck
     flycheck
 
+    ;; mozc
+    mozc
+    mozc-popup
+    ac-mozc
+    
     ;; GNU GLOBAL
     ggtags
     helm-gtags
