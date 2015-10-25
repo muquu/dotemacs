@@ -20,7 +20,8 @@
 ;;(set-face-foreground 'highlight nil)
 ;; カラーテーマ
 ;; molokai-theme
-(load-theme 'molokai t)
+;(load-theme 'molokai t)
+(load-theme 'solarized-dark t)
 
 ;;; 履歴を次回Emacs起動時にも保存する
 (savehist-mode 1)
@@ -64,3 +65,7 @@
 (add-to-history minibuffer-history-variable (minibuffer-contents))))
 ;;; yesと入力するのは面倒なのでyで十分
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; ビープ音を消す
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)

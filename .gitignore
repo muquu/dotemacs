@@ -20,7 +20,7 @@ kkcrc
 ac-comphist.dat
 
 elpa/
-site-lisp/
+#site-lisp/
 eshell/
 auto-save-list/
 server/

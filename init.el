@@ -20,16 +20,21 @@
 
     ;; color-theme
     molokai-theme
+    solarized-theme
 
     ;; hl-line
     hl-line+
 
     ;; helm
-    helm helm-descbinds
+    helm
+    helm-descbinds
 
     ;; magit
     magit
 
+    ;; ddskk
+    ddskk
+    
     ;; diredの履歴も記録する
     recentf-ext
 
@@ -52,7 +57,7 @@
     smartrep
 
     ;; migemo
-    migemo
+    ;migemo
 
     ;; auto-complete
     auto-complete
@@ -63,26 +68,10 @@
     ;; flycheck
     flycheck
 
-    ;; mozc
-    mozc
-    mozc-popup
-    ac-mozc
-    
     ;; GNU GLOBAL
     ggtags
     helm-gtags
-    
-    ;; PHP
-    php-mode
-    php-completion
-    phpunit
-    php-eldoc
-    php-auto-yasnippets
-    
-    ;; python
-    python-environment
-    jedi
-    
+
     ))
 
 (let ((not-installed (loop for x in installing-package-list
