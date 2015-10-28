@@ -1,3 +1,10 @@
+;; server start for emacs-client
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;; スタート時のスプラッシュ非表示
+(setq inhibit-startup-message t)
 ;;reload
 (global-set-key [f12] 'eval-buffer)
 ;; バックアップファイルを作らない(*.~)
@@ -6,6 +13,8 @@
 (setq auto-save-default nil)
 ;; ツールバー非表示
 (tool-bar-mode 0)
+;; メニューバー非表示
+;(menu-bar-mode 0)
 ;; スクロールバー非表示
 (scroll-bar-mode 0)
 ;; デフォルトエンコーディング
@@ -13,15 +22,6 @@
 (set-default-coding-systems 'utf-8)
 ;; ロケール
 (setenv "LANG" "ja_JP.UTF-8")
-
-;;; 現在行に色をつける
-(global-hl-line-mode 1)
-;;(set-face-background 'hl-line "darkolivegreen")
-;;(set-face-foreground 'highlight nil)
-;; カラーテーマ
-;; molokai-theme
-;(load-theme 'molokai t)
-(load-theme 'solarized-dark t)
 
 ;;; 履歴を次回Emacs起動時にも保存する
 (savehist-mode 1)
@@ -69,3 +69,49 @@
 ;; ビープ音を消す
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
+
+;; ediff
+;; コントロール用のバッファを同一フレーム内に表示
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+;; diffのバッファを上下ではなく左右に並べる
+(setq ediff-split-window-function 'split-window-horizontally)
+
+;;
+;; exec-path-from-shell
+;;
+(when (package-installed-p 'exec-path-from-shell)
+  (exec-path-from-shell-initialize))
+
+;;
+;; helm
+;;
+(require 'helm-config)
+;;(require 'helm-ag)
+(require 'helm-descbinds)
+
+(helm-descbinds-mode)
+
+(global-set-key (kbd "C-;") 'helm-mini)
+(global-set-key (kbd "C-c h") 'helm-mini)
+(global-set-key (kbd "C-c b") 'helm-descbinds)
+(global-set-key (kbd "C-c o") 'helm-occur)
+;;(global-set-key (kbd "C-c g") 'helm-ag)
+(global-set-key (kbd "C-c y") 'helm-show-kill-ring)
+
+;;
+;; magit
+;;
+(require 'magit)
+(global-set-key (kbd "\C-cs") 'magit-status)
+
+;;
+;; DDSKK の設定
+;;
+;;(require 'skk-autoloads)
+;; AZIKを使用する
+;;(setq skk-use-azik t)
+;;(setq skk-azik-key 'en)
+;; skk-auto-fill-mode だと35文字(半角70文字)で自動改行されてしまう
+(global-set-key "\C-xj" 'skk-mode)
+;; Enterによる確定で改行しない
+(setq skk-egg-like-newline t)
