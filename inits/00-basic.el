@@ -83,6 +83,14 @@
   (exec-path-from-shell-initialize))
 
 ;;
+;; recentf and recentf-ext.el の設定
+;;
+(require 'recentf)
+;;(setq recentf-save-file "~/.emacs.d/.recentf")
+(setq recentf-max-saved-items 100)      ;; recentf に保存するファイルの数
+(require 'recentf-ext)
+
+;;
 ;; helm
 ;;
 (require 'helm-config)

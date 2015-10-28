@@ -7,7 +7,9 @@
 ;; パッケージ
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 (package-initialize)
 
 (require 'cl)
@@ -19,27 +21,52 @@
     init-loader
 
     ;; color-theme
-    molokai-theme
     solarized-theme
-
-    ;; hl-line
-    hl-line+
 
     ;; helm
     helm
     helm-descbinds
+    helm-ag
+    helm-projectile
 
     ;; magit
     magit
 
-    ;; ddskk
+    ;; git-gutter
+    git-gutter
+    git-gutter-fringe
+
+    ;; Daredevel SKK
     ddskk
-    
+
+    ;; the_siver_searcher (agコマンドが必要)
+    ag
+
+    ;; $PATHを引き継ぐ
+    exec-path-from-shell
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; ファイル管理
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ;; direx
+    direx
+
+    ;; ファイルビューワー
+    projectile
+
     ;; diredの履歴も記録する
     recentf-ext
 
     ;; 試行錯誤用のファイルを開く
     open-junk-file
+
+    ;; 保存時に自動バイトコンパイル
+    auto-async-byte-compile
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; 編集支援
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     ;; 式の評価結果を注釈する
     lispxmp
@@ -47,30 +74,64 @@
     ;; 括弧の対応を保持して編集する
     paredit
 
-    ;; 保存時に自動バイトコンパイル
-    auto-async-byte-compile
-
-    ;; ウィンドウ構成管理
-    elscreen
-
-    ;; 連続操作
+    ;; sequential operation
     smartrep
 
-    ;; migemo
-    ;migemo
+    ;; Multiple cursors
+    multiple-cursors
 
     ;; auto-complete
     auto-complete
 
-    ;; yasnippets
+    ;; C/C++ development
+    cpputils-cmake
+
+    ;; スニペット
     yasnippet
 
     ;; flycheck
     flycheck
 
-    ;; GNU GLOBAL
-    ggtags
-    helm-gtags
+    ;; 括弧やクォートなどを自動挿入,管理
+    smartparens
+
+    ;; テキストを移動させる
+    move-text
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; Visualize,Appearance,Miscellaneous
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ;; undo履歴をビジュアライズ
+    undo-tree
+
+    ;; バッファやEmacs終了後もファイルのundo履歴を保持
+    undohist
+
+    ;; yankやundoをハイライトで強調表示
+    volatile-highlights
+
+    ;; 現在の行をハイライトする
+    hl-line+
+
+    ;; 検索,置換
+    anzu
+
+    ;; 選択範囲の機能を強化
+    expand-region
+
+    ;; 大量の括弧を色分け
+    rainbow-delimiters
+
+    ;; 補完などをポップアップ表示
+    popwin
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; モード
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    ;; Markdown
+    markdown-mode
 
     ))
 
