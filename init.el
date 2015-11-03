@@ -81,9 +81,13 @@
     multiple-cursors
 
     ;; auto-complete
-    auto-complete
+    ;auto-complete
+
+    ;; company-mode
+    company
 
     ;; C/C++ development
+    cmake-mode
     cpputils-cmake
 
     ;; スニペット
@@ -145,4 +149,4 @@
 
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
-(init-loader-load "~/.emacs.d/inits")
+(init-loader-load "~/.emacs.d/init-loader")

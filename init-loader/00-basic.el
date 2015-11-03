@@ -79,8 +79,24 @@
 ;;
 ;; exec-path-from-shell
 ;;
-(when (package-installed-p 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+;; (when (package-installed-p 'exec-path-from-shell)
+;;   (exec-path-from-shell-initialize))
+
+;; (require 'exec-path-from-shell)
+;; (when (memq system-type '(windows-nt ms-dos cygwin))
+;;   (defadvice exec-path-from-shell-setenv (around fix-for-cygwin activate)
+;;     (cond ((string= "PATH" (ad-get-arg 0))
+;;            (setq eshell-path-env (ad-get-arg 1))
+;;            (setq exec-path (loop for p in (split-string (ad-get-arg 1) ":")
+;;                                  if (not (string= p ""))
+;;                                  collect (substitute-in-file-name (directory-file-name p)))))
+;;           (t
+;;            ad-do-it))))
+
+;; (let ((envs '("PATH" "HOME")))
+;;   (exec-path-from-shell-copy-envs envs))
+
+
 
 ;;
 ;; recentf and recentf-ext.el の設定

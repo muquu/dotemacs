@@ -11,19 +11,36 @@
 ;;
 ;; フォント
 ;;
+;; アンチエイリアスフォント
+;; (when (eq window-system 'w32)
+;;   (set-face-attribute 'default nil
+;; 		      :family "Inconsolata"
+;; 		      :height 120)
+
+;;   (dolist (target '(japanese-jisx0212
+;; 		    japanese-jisx0213-2
+;; 		    japanese-jisx0213.2004-1
+;; 		    katakana-jisx0201
+;; 		    ))
+;;     (set-fontset-font (frame-parameter nil 'font)
+;; 		      target
+;; 		      (font-spec :family "MeiryoKe_Console" :registry "unicode-bmp" :lang 'ja))))
+
+;; ビットマップフォント
 (when (eq window-system 'w32)
   (set-face-attribute 'default nil
-		      :family "Inconsolata"
-		      :height 120)
+                      :family "ProggyClean"
+                      :height 80)
 
   (dolist (target '(japanese-jisx0212
-		    japanese-jisx0213-2
-		    japanese-jisx0213.2004-1
-		    katakana-jisx0201
-		    ))
+                    japanese-jisx0213-2
+                    japanese-jisx0213.2004-1
+                    katakana-jisx0201
+                    ))
     (set-fontset-font (frame-parameter nil 'font)
-		      target
-		      (font-spec :family "MeiryoKe_Console" :registry "unicode-bmp" :lang 'ja))))
+                      target
+                      (font-spec :family "MS GOTHIC" :registry "unicode-bmp" :lang 'ja))))
+
 
 (when (eq window-system 'x)
   (set-face-attribute 'default nil
